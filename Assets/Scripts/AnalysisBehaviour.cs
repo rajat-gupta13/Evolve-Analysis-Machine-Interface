@@ -902,6 +902,621 @@ public class AnalysisBehaviour : MonoBehaviour
         pelvisHabitatSelected = "";
     }
 
+    public void HandDigging()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction1.interactable = true;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "Digging";
+            panelLeftFunction1.onClick.AddListener(PanelLeftHandDigging);
+            ToggleButtonsInteractable(handDigging, false);
+            handFunctionsSelected.Add("Digging");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction2.interactable = true;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "Digging";
+            panelLeftFunction2.onClick.AddListener(PanelLeftHandDigging);
+            ToggleButtonsInteractable(handDigging, false);
+            handFunctionsSelected.Add("Digging");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction3.interactable = true;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "Digging";
+            panelLeftFunction3.onClick.AddListener(PanelLeftHandDigging);
+            ToggleButtonsInteractable(handDigging, false);
+            handFunctionsSelected.Add("Digging");
+        }
+        else
+        {
+            panelFunctionsFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandDigging()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "Digging")
+        {
+            panelLeftFunction1.interactable = false;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction1.onClick.RemoveListener(PanelLeftHandDigging);
+            ToggleButtonsInteractable(handDigging, true);
+            handFunctionsSelected.Remove("Digging");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "Digging")
+        {
+            panelLeftFunction2.interactable = false;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction2.onClick.RemoveListener(PanelLeftHandDigging);
+            ToggleButtonsInteractable(handDigging, true);
+            handFunctionsSelected.Remove("Digging");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "Digging")
+        {
+            panelLeftFunction3.interactable = false;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction3.onClick.RemoveListener(PanelLeftHandDigging);
+            ToggleButtonsInteractable(handDigging, true);
+            handFunctionsSelected.Remove("Digging");
+        }
+    }
+
+    public void HandBreaking()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction1.interactable = true;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "Breaking";
+            panelLeftFunction1.onClick.AddListener(PanelLeftHandBreaking);
+            ToggleButtonsInteractable(handBreaking, false);
+            handFunctionsSelected.Add("Breaking");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction2.interactable = true;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "Breaking";
+            panelLeftFunction2.onClick.AddListener(PanelLeftHandBreaking);
+            ToggleButtonsInteractable(handBreaking, false);
+            handFunctionsSelected.Add("Breaking");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction3.interactable = true;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "Breaking";
+            panelLeftFunction3.onClick.AddListener(PanelLeftHandBreaking);
+            ToggleButtonsInteractable(handBreaking, false);
+            handFunctionsSelected.Add("Breaking");
+        }
+        else
+        {
+            panelFunctionsFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandBreaking()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "Breaking")
+        {
+            panelLeftFunction1.interactable = false;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction1.onClick.RemoveListener(PanelLeftHandBreaking);
+            ToggleButtonsInteractable(handBreaking, true);
+            handFunctionsSelected.Remove("Breaking");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "Breaking")
+        {
+            panelLeftFunction2.interactable = false;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction2.onClick.RemoveListener(PanelLeftHandBreaking);
+            ToggleButtonsInteractable(handBreaking, true);
+            handFunctionsSelected.Remove("Breaking");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "Breaking")
+        {
+            panelLeftFunction3.interactable = false;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction3.onClick.RemoveListener(PanelLeftHandBreaking);
+            ToggleButtonsInteractable(handBreaking, true);
+            handFunctionsSelected.Remove("Breaking");
+        }
+    }
+
+    public void HandPiercing()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction1.interactable = true;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "Piercing";
+            panelLeftFunction1.onClick.AddListener(PanelLeftHandPiercing);
+            ToggleButtonsInteractable(handPiercing, false);
+            handFunctionsSelected.Add("Piercing");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction2.interactable = true;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "Piercing";
+            panelLeftFunction2.onClick.AddListener(PanelLeftHandPiercing);
+            ToggleButtonsInteractable(handPiercing, false);
+            handFunctionsSelected.Add("Piercing");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction3.interactable = true;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "Piercing";
+            panelLeftFunction3.onClick.AddListener(PanelLeftHandPiercing);
+            ToggleButtonsInteractable(handPiercing, false);
+            handFunctionsSelected.Add("Piercing");
+        }
+        else
+        {
+            panelFunctionsFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandPiercing()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "Piercing")
+        {
+            panelLeftFunction1.interactable = false;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction1.onClick.RemoveListener(PanelLeftHandPiercing);
+            ToggleButtonsInteractable(handPiercing, true);
+            handFunctionsSelected.Remove("Piercing");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "Piercing")
+        {
+            panelLeftFunction2.interactable = false;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction2.onClick.RemoveListener(PanelLeftHandPiercing);
+            ToggleButtonsInteractable(handPiercing, true);
+            handFunctionsSelected.Remove("Piercing");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "Piercing")
+        {
+            panelLeftFunction3.interactable = false;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction3.onClick.RemoveListener(PanelLeftHandPiercing);
+            ToggleButtonsInteractable(handPiercing, true);
+            handFunctionsSelected.Remove("Piercing");
+        }
+    }
+
+    public void HandThrowing()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction1.interactable = true;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "Throwing";
+            panelLeftFunction1.onClick.AddListener(PanelLeftHandThrowing);
+            ToggleButtonsInteractable(handThrowing, false);
+            handFunctionsSelected.Add("Throwing");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction2.interactable = true;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "Throwing";
+            panelLeftFunction2.onClick.AddListener(PanelLeftHandThrowing);
+            ToggleButtonsInteractable(handThrowing, false);
+            handFunctionsSelected.Add("Throwing");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction3.interactable = true;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "Throwing";
+            panelLeftFunction3.onClick.AddListener(PanelLeftHandThrowing);
+            ToggleButtonsInteractable(handThrowing, false);
+            handFunctionsSelected.Add("Throwing");
+        }
+        else
+        {
+            panelFunctionsFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandThrowing()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "Throwing")
+        {
+            panelLeftFunction1.interactable = false;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction1.onClick.RemoveListener(PanelLeftHandThrowing);
+            ToggleButtonsInteractable(handThrowing, true);
+            handFunctionsSelected.Remove("Throwing");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "Throwing")
+        {
+            panelLeftFunction2.interactable = false;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction2.onClick.RemoveListener(PanelLeftHandThrowing);
+            ToggleButtonsInteractable(handThrowing, true);
+            handFunctionsSelected.Remove("Throwing");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "Throwing")
+        {
+            panelLeftFunction3.interactable = false;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction3.onClick.RemoveListener(PanelLeftHandThrowing);
+            ToggleButtonsInteractable(handThrowing, true);
+            handFunctionsSelected.Remove("Throwing");
+        }
+    }
+
+    public void HandPrecisionGripping()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction1.interactable = true;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "Precision gripping";
+            panelLeftFunction1.onClick.AddListener(PanelLeftHandPrecisionGripping);
+            ToggleButtonsInteractable(handPrecisionGripping, false);
+            handFunctionsSelected.Add("Precision gripping");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction2.interactable = true;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "Precision gripping";
+            panelLeftFunction2.onClick.AddListener(PanelLeftHandPrecisionGripping);
+            ToggleButtonsInteractable(handPrecisionGripping, false);
+            handFunctionsSelected.Add("Precision gripping");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction3.interactable = true;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "Precision gripping";
+            panelLeftFunction3.onClick.AddListener(PanelLeftHandPrecisionGripping);
+            ToggleButtonsInteractable(handPrecisionGripping, false);
+            handFunctionsSelected.Add("Precision gripping");
+        }
+        else
+        {
+            panelFunctionsFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandPrecisionGripping()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "Precision gripping")
+        {
+            panelLeftFunction1.interactable = false;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction1.onClick.RemoveListener(PanelLeftHandPrecisionGripping);
+            ToggleButtonsInteractable(handPrecisionGripping, true);
+            handFunctionsSelected.Remove("Precision gripping");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "Precision gripping")
+        {
+            panelLeftFunction2.interactable = false;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction2.onClick.RemoveListener(PanelLeftHandPrecisionGripping);
+            ToggleButtonsInteractable(handPrecisionGripping, true);
+            handFunctionsSelected.Remove("Precision gripping");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "Precision gripping")
+        {
+            panelLeftFunction3.interactable = false;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction3.onClick.RemoveListener(PanelLeftHandPrecisionGripping);
+            ToggleButtonsInteractable(handPrecisionGripping, true);
+            handFunctionsSelected.Remove("Precision gripping");
+        }
+    }
+
+    public void HandReaching()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction1.interactable = true;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "Reaching";
+            panelLeftFunction1.onClick.AddListener(PanelLeftHandReaching);
+            ToggleButtonsInteractable(handReaching, false);
+            handFunctionsSelected.Add("Reaching");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction2.interactable = true;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "Reaching";
+            panelLeftFunction2.onClick.AddListener(PanelLeftHandReaching);
+            ToggleButtonsInteractable(handReaching, false);
+            handFunctionsSelected.Add("Reaching");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction3.interactable = true;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "Reaching";
+            panelLeftFunction3.onClick.AddListener(PanelLeftHandReaching);
+            ToggleButtonsInteractable(handReaching, false);
+            handFunctionsSelected.Add("Reaching");
+        }
+        else
+        {
+            panelFunctionsFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandReaching()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "Reaching")
+        {
+            panelLeftFunction1.interactable = false;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction1.onClick.RemoveListener(PanelLeftHandReaching);
+            ToggleButtonsInteractable(handReaching, true);
+            handFunctionsSelected.Remove("Reaching");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "Reaching")
+        {
+            panelLeftFunction2.interactable = false;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction2.onClick.RemoveListener(PanelLeftHandReaching);
+            ToggleButtonsInteractable(handReaching, true);
+            handFunctionsSelected.Remove("Reaching");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "Reaching")
+        {
+            panelLeftFunction3.interactable = false;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction3.onClick.RemoveListener(PanelLeftHandReaching);
+            ToggleButtonsInteractable(handReaching, true);
+            handFunctionsSelected.Remove("Reaching");
+        }
+    }
+
+    public void HandGrabbing()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction1.interactable = true;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "Grabbing";
+            panelLeftFunction1.onClick.AddListener(PanelLeftHandGrabbing);
+            ToggleButtonsInteractable(handGrabbing, false);
+            handFunctionsSelected.Add("Grabbing");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction2.interactable = true;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "Grabbing";
+            panelLeftFunction2.onClick.AddListener(PanelLeftHandGrabbing);
+            ToggleButtonsInteractable(handGrabbing, false);
+            handFunctionsSelected.Add("Grabbing");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction3.interactable = true;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "Grabbing";
+            panelLeftFunction3.onClick.AddListener(PanelLeftHandGrabbing);
+            ToggleButtonsInteractable(handGrabbing, false);
+            handFunctionsSelected.Add("Grabbing");
+        }
+        else
+        {
+            panelFunctionsFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandGrabbing()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "Grabbing")
+        {
+            panelLeftFunction1.interactable = false;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction1.onClick.RemoveListener(PanelLeftHandGrabbing);
+            ToggleButtonsInteractable(handGrabbing, true);
+            handFunctionsSelected.Remove("Grabbing");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "Grabbing")
+        {
+            panelLeftFunction2.interactable = false;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction2.onClick.RemoveListener(PanelLeftHandGrabbing);
+            ToggleButtonsInteractable(handGrabbing, true);
+            handFunctionsSelected.Remove("Grabbing");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "Grabbing")
+        {
+            panelLeftFunction3.interactable = false;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction3.onClick.RemoveListener(PanelLeftHandGrabbing);
+            ToggleButtonsInteractable(handGrabbing, true);
+            handFunctionsSelected.Remove("Grabbing");
+        }
+    }
+
+    public void HandClawing()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction1.interactable = true;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "Clawing";
+            panelLeftFunction1.onClick.AddListener(PanelLeftHandClawing);
+            ToggleButtonsInteractable(handClawing, false);
+            handFunctionsSelected.Add("Clawing");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction2.interactable = true;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "Clawing";
+            panelLeftFunction2.onClick.AddListener(PanelLeftHandClawing);
+            ToggleButtonsInteractable(handClawing, false);
+            handFunctionsSelected.Add("Clawing");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction3.interactable = true;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "Clawing";
+            panelLeftFunction3.onClick.AddListener(PanelLeftHandClawing);
+            ToggleButtonsInteractable(handClawing, false);
+            handFunctionsSelected.Add("Clawing");
+        }
+        else
+        {
+            panelFunctionsFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandClawing()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "Clawing")
+        {
+            panelLeftFunction1.interactable = false;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction1.onClick.RemoveListener(PanelLeftHandClawing);
+            ToggleButtonsInteractable(handClawing, true);
+            handFunctionsSelected.Remove("Clawing");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "Clawing")
+        {
+            panelLeftFunction2.interactable = false;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction2.onClick.RemoveListener(PanelLeftHandClawing);
+            ToggleButtonsInteractable(handClawing, true);
+            handFunctionsSelected.Remove("Clawing");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "Clawing")
+        {
+            panelLeftFunction3.interactable = false;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction3.onClick.RemoveListener(PanelLeftHandClawing);
+            ToggleButtonsInteractable(handClawing, true);
+            handFunctionsSelected.Remove("Clawing");
+        }
+    }
+
+    public void HandTearing()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction1.interactable = true;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "Tearing";
+            panelLeftFunction1.onClick.AddListener(PanelLeftHandTearing);
+            ToggleButtonsInteractable(handTearing, false);
+            handFunctionsSelected.Add("Tearing");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction2.interactable = true;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "Tearing";
+            panelLeftFunction2.onClick.AddListener(PanelLeftHandTearing);
+            ToggleButtonsInteractable(handTearing, false);
+            handFunctionsSelected.Add("Tearing");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftFunction3.interactable = true;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "Tearing";
+            panelLeftFunction3.onClick.AddListener(PanelLeftHandTearing);
+            ToggleButtonsInteractable(handTearing, false);
+            handFunctionsSelected.Add("Tearing");
+        }
+        else
+        {
+            panelFunctionsFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandTearing()
+    {
+        if (panelLeftFunction1.GetComponentInChildren<Text>().text == "Tearing")
+        {
+            panelLeftFunction1.interactable = false;
+            panelLeftFunction1.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction1.onClick.RemoveListener(PanelLeftHandTearing);
+            ToggleButtonsInteractable(handTearing, true);
+            handFunctionsSelected.Remove("Tearing");
+        }
+        else if (panelLeftFunction2.GetComponentInChildren<Text>().text == "Tearing")
+        {
+            panelLeftFunction2.interactable = false;
+            panelLeftFunction2.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction2.onClick.RemoveListener(PanelLeftHandTearing);
+            ToggleButtonsInteractable(handTearing, true);
+            handFunctionsSelected.Remove("Tearing");
+        }
+        else if (panelLeftFunction3.GetComponentInChildren<Text>().text == "Tearing")
+        {
+            panelLeftFunction3.interactable = false;
+            panelLeftFunction3.GetComponentInChildren<Text>().text = "";
+            panelLeftFunction3.onClick.RemoveListener(PanelLeftHandTearing);
+            ToggleButtonsInteractable(handTearing, true);
+            handFunctionsSelected.Remove("Tearing");
+        }
+    }
+
+    public void HandHabitatGrasslands()
+    {
+        if (panelLeftHabitat.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftHabitat.interactable = true;
+            panelLeftHabitat.GetComponentInChildren<Text>().text = "Grassland terrain";
+            panelLeftHabitat.onClick.AddListener(PanelLeftHandHabitatGrasslands);
+            ToggleButtonsInteractable(handHabitatGrassland, false);
+            handHabitatSelected = "Grassland terrain";
+        }
+        else
+        {
+            panelHabitatFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandHabitatGrasslands()
+    {
+        panelLeftHabitat.interactable = false;
+        panelLeftHabitat.GetComponentInChildren<Text>().text = "";
+        panelLeftHabitat.onClick.RemoveListener(PanelLeftHandHabitatGrasslands);
+        ToggleButtonsInteractable(handHabitatGrassland, true);
+        handHabitatSelected = "";
+    }
+
+    public void HandHabitatUnderground()
+    {
+        if (panelLeftHabitat.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftHabitat.interactable = true;
+            panelLeftHabitat.GetComponentInChildren<Text>().text = "Underground tunnels";
+            panelLeftHabitat.onClick.AddListener(PanelLeftHandHabitatUnderground);
+            ToggleButtonsInteractable(handHabitatUnderground, false);
+            handHabitatSelected = "Underground tunnels";
+        }
+        else
+        {
+            panelHabitatFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandHabitatUnderground()
+    {
+        panelLeftHabitat.interactable = false;
+        panelLeftHabitat.GetComponentInChildren<Text>().text = "";
+        panelLeftHabitat.onClick.RemoveListener(PanelLeftHandHabitatUnderground);
+        ToggleButtonsInteractable(handHabitatUnderground, true);
+        handHabitatSelected = "";
+    }
+
+    public void HandHabitatTropical()
+    {
+        if (panelLeftHabitat.GetComponentInChildren<Text>().text == "")
+        {
+            panelLeftHabitat.interactable = true;
+            panelLeftHabitat.GetComponentInChildren<Text>().text = "Tropical forest";
+            panelLeftHabitat.onClick.AddListener(PanelLeftHandHabitatTropical);
+            ToggleButtonsInteractable(handHabitatTropical, false);
+            handHabitatSelected = "Tropical forest";
+        }
+        else
+        {
+            panelHabitatFilled.SetActive(true);
+        }
+    }
+
+    public void PanelLeftHandHabitatTropical()
+    {
+        panelLeftHabitat.interactable = false;
+        panelLeftHabitat.GetComponentInChildren<Text>().text = "";
+        panelLeftHabitat.onClick.RemoveListener(PanelLeftHandHabitatTropical);
+        ToggleButtonsInteractable(handHabitatTropical, true);
+        handHabitatSelected = "";
+    }
+
     private void ToggleButtonsInteractable(Button[] buttons, bool state)
     {
         foreach (Button b in buttons)
@@ -952,6 +1567,7 @@ public class AnalysisBehaviour : MonoBehaviour
         {
             dataNumber.SetActive(true);
             dataNumber.GetComponent<Text>().text = "Data #: CMNHANL0" + System.DateTime.Now.Month.ToString() + System.DateTime.Now.Day.ToString() + "19_" + dataCounter.ToString("00");
+            dataCounter++;
         }
         
     }

@@ -76,6 +76,12 @@ public class AnalysisBehaviour : MonoBehaviour
     private string pelvisHabitatSelected;
     private string handHabitatSelected;
     private int dataCounter = 1;
+    public string addressBDC = "/bdc";
+
+    public AudioSource bcdSFX;
+    public AudioClip bcdTakePicture, bcdScanNoResult, bcdScanResult;
+
+    private bool receivedResult = true;
 
     // Start is called before the first frame update
     void Start()
@@ -103,6 +109,7 @@ public class AnalysisBehaviour : MonoBehaviour
         //rawimage.texture = webcamTexture;
         //rawimage.material.mainTexture = webcamTexture;
         _oscIn.MapString("/scan", AnalysisResult);
+        _oscIn.MapInt("/resetbcd", ResetMachineCalled);
         try
         {
             ScanButton.Open(5000);
@@ -177,13 +184,25 @@ public class AnalysisBehaviour : MonoBehaviour
         panelHand4.SetActive(true);
     }
 
+    private void ResetMachineCalled(int args)
+    {
+        ResetButton();
+    }
+
     private void AnalysisResult(string scannedObject)
     {
+        receivedResult = true;
         if (scannedObject == "pelvis")
         {
+            bcdSFX.clip = bcdScanResult;    
+            bcdSFX.Play();
             print("Pelvis Scanned");
+            instructions.SetActive(false);
             scanning.SetActive(false);
             panelLeft.SetActive(true);
+            noMatch.SetActive(false);
+            resetButtonFullScreen.SetActive(false);
+            noMatchPanelImage.SetActive(false);
             scannedSampleTitle.text = "Scanned Sample #" + captureCounter.ToString("000");
             panelMatchesPelvis.SetActive(true);
             LoadImage(rawimageMatch);
@@ -192,9 +211,15 @@ public class AnalysisBehaviour : MonoBehaviour
         }
         else if (scannedObject == "hand")
         {
+            bcdSFX.clip = bcdScanResult;
+            bcdSFX.Play();
             print("Hand Scanned");
+            instructions.SetActive(false);
             scanning.SetActive(false);
             panelLeft.SetActive(true);
+            noMatch.SetActive(false);
+            resetButtonFullScreen.SetActive(false);
+            noMatchPanelImage.SetActive(false);
             scannedSampleTitle.text = "Scanned Sample #" + captureCounter.ToString("000");
             panelMatchesHand.SetActive(true);
             LoadImage(rawimageMatch);
@@ -203,22 +228,39 @@ public class AnalysisBehaviour : MonoBehaviour
         }
         else if (scannedObject == "incomplete")
         {
+            bcdSFX.clip = bcdScanNoResult;
+            bcdSFX.Play();
             print("Incomplete Scan");
+            instructions.SetActive(false);
             scanning.SetActive(false);
             noMatch.SetActive(true);
             resetButtonFullScreen.SetActive(true);
             noMatchPanelImage.SetActive(true);
             LoadImage(rawimageNoMatch);
+            ResetPanels();
             pelvis = false;
             hand = false;
         }
     }
 
-    public void ResetButton()
+    private void ResetPanels()
     {
         panelLeft.SetActive(false);
-        panelMatchesHand.SetActive(false);
         panelMatchesPelvis.SetActive(false);
+        panelPelvis1.SetActive(false);
+        panelPelvis2.SetActive(false);
+        panelPelvis3.SetActive(false);
+        panelPelvis4.SetActive(false);
+        panelMatchesHand.SetActive(false);
+        panelHand1.SetActive(false);
+        panelHand2.SetActive(false);
+        panelHand3.SetActive(false);
+        panelHand4.SetActive(false);
+    }
+
+    public void ResetButton()
+    {
+        ResetPanels();
         noMatch.SetActive(false);
         resetButtonFullScreen.SetActive(false);
         noMatchPanelImage.SetActive(false);
@@ -227,6 +269,11 @@ public class AnalysisBehaviour : MonoBehaviour
         hand = false;
         dataNumber.SetActive(false);
         matches = 0;
+        ResetSampleFunctionsAndHabitat();
+    }
+
+    private void ResetSampleFunctionsAndHabitat()
+    {
         PanelLeftPelvisBalancing();
         PanelLeftPelvisFourLegged();
         PanelLeftPelvisHabitatGrasslands();
@@ -238,6 +285,18 @@ public class AnalysisBehaviour : MonoBehaviour
         PanelLeftPelvisOccasionalUpright();
         PanelLeftPelvisTravellingLongDistances();
         PanelLeftPelvisWalkingUpright();
+        PanelLeftHandBreaking();
+        PanelLeftHandClawing();
+        PanelLeftHandDigging();
+        PanelLeftHandGrabbing();
+        PanelLeftHandHabitatGrasslands();
+        PanelLeftHandHabitatTropical();
+        PanelLeftHandHabitatUnderground();
+        PanelLeftHandPiercing();
+        PanelLeftHandPrecisionGripping();
+        PanelLeftHandReaching();
+        PanelLeftHandTearing();
+        PanelLeftHandThrowing();
     }
 
     // Update is called once per frame
@@ -328,11 +387,29 @@ public class AnalysisBehaviour : MonoBehaviour
         {
 
             case true:                    //MicroscopeClickSource.PlayOneShot(MicroscopeClick);
-                SaveImage();
-                _oscOut.Send(address, captureCounter);
-                //osc.SendOSCMessage(address + " " + captureCounter.ToString());
-                instructions.SetActive(false);
-                scanning.SetActive(true);
+                if (receivedResult)
+                {
+                    receivedResult = false;
+                    bcdSFX.clip = bcdTakePicture;
+                    bcdSFX.Play();
+                    SaveImage();
+                    _oscOut.Send(address, captureCounter);
+                    //osc.SendOSCMessage(address + " " + captureCounter.ToString());
+                    instructions.SetActive(false);
+                    scanning.SetActive(true);
+                    panelLeft.SetActive(false);
+                    panelMatchesPelvis.SetActive(false);
+                    panelPelvis1.SetActive(false);
+                    panelPelvis2.SetActive(false);
+                    panelPelvis3.SetActive(false);
+                    panelPelvis4.SetActive(false);
+                    panelMatchesHand.SetActive(false);
+                    panelHand1.SetActive(false);
+                    panelHand2.SetActive(false);
+                    panelHand3.SetActive(false);
+                    panelHand4.SetActive(false);
+                    ResetSampleFunctionsAndHabitat();
+                }
                 break;
             case false:
                 //RFIDMicroscope.AntennaEnabled = false;
@@ -1566,8 +1643,10 @@ public class AnalysisBehaviour : MonoBehaviour
         if (matches == 4)
         {
             dataNumber.SetActive(true);
-            dataNumber.GetComponent<Text>().text = "Data #: CMNHANL0" + System.DateTime.Now.Month.ToString() + System.DateTime.Now.Day.ToString() + "19_" + dataCounter.ToString("00");
+            dataNumber.GetComponent<Text>().text = "Data #: CMNHBCD0" + System.DateTime.Now.Month.ToString() + System.DateTime.Now.Day.ToString() + "19_" + dataCounter.ToString("00");
+            _oscOut.Send(addressBDC, dataCounter);
             dataCounter++;
+            
         }
         
     }
@@ -1578,6 +1657,17 @@ public class AnalysisBehaviour : MonoBehaviour
         panelHabitatFilled.SetActive(false);
         panelVerificationScore.SetActive(false);
         dataNumber.SetActive(false);
+        matches = 0;
+    }
+
+    public void CloseOverlayVerify()
+    {
+        panelFunctionsFilled.SetActive(false);
+        panelHabitatFilled.SetActive(false);
+        panelVerificationScore.SetActive(false);
+        dataNumber.SetActive(false);
+        if (matches == 4)
+            ResetButton();
         matches = 0;
     }
 }

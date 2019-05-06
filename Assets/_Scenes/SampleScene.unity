@@ -836,7 +836,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d7bec4f3a88c4af45802639060c66cf2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 646b07b77f082bc439a64226e061cd87, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1014,7 +1014,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1863186575}
-        m_MethodName: CloseOverlay
+        m_MethodName: CloseOverlayVerify
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1120,7 +1120,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d7bec4f3a88c4af45802639060c66cf2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cafb15ae9abf6b34c8ef56a62c979cde, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1352,7 +1352,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d7bec4f3a88c4af45802639060c66cf2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68046c612b2813a4d938e556d992afe1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1883,8 +1883,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000045776, y: 449}
-  m_SizeDelta: {x: 829.8, y: 94.9}
+  m_AnchoredPosition: {x: 0.000022888, y: 449}
+  m_SizeDelta: {x: 1230.9, y: 94.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &150220954
 MonoBehaviour:
@@ -1919,7 +1919,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Possible Matches
+  m_Text: Closest Terrestrial Matches
 --- !u!222 &150220955
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2550,7 +2550,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d7bec4f3a88c4af45802639060c66cf2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af9d3faba421c3c4e91689cee6361e12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3080,7 +3080,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f12355ceaa9ac1f438db2ea141d3bb2c, type: 3}
-    m_FontSize: 100
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -7432,7 +7432,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d7bec4f3a88c4af45802639060c66cf2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b7edca02d4ca774185556c0b8042b62, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10787,7 +10787,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d7bec4f3a88c4af45802639060c66cf2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00fafbcb650022440a3386f98a318c93, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12260,6 +12260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1170345800}
+  - component: {fileID: 1170345801}
   m_Layer: 0
   m_Name: AnalysisMachine
   m_TagString: Untagged
@@ -12282,6 +12283,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1170345801
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170345799}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1214060983
 GameObject:
   m_ObjectHideFlags: 0
@@ -13506,18 +13603,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f12355ceaa9ac1f438db2ea141d3bb2c, type: 3}
-    m_FontSize: 100
+    m_FontSize: 120
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 100
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Specimen Function Analysis Machine
+  m_Text: Bone Comparison Database Tool
 --- !u!222 &1346991955
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13757,7 +13854,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000045776, y: 449}
-  m_SizeDelta: {x: 829.8, y: 94.9}
+  m_SizeDelta: {x: 1230.9, y: 94.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1364100033
 MonoBehaviour:
@@ -13792,7 +13889,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Possible Matches
+  m_Text: Closest Terrestrial Matches
 --- !u!222 &1364100034
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13972,7 +14069,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d7bec4f3a88c4af45802639060c66cf2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d557f83101a852e409911ad0cd29c4e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15484,8 +15581,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: -114}
-  m_SizeDelta: {x: 1922.1, y: 319.1}
+  m_AnchoredPosition: {x: 0, y: -114}
+  m_SizeDelta: {x: 1937.1, y: 319.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1534578300
 MonoBehaviour:
@@ -15520,8 +15617,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Place assembled specimen in the tray and press the scan button to analyse
-    the function and habitat of the specimen.
+  m_Text: Place an assembled specimen in the tray then press the red scan button to
+    begin comparison.
 --- !u!222 &1534578301
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18689,6 +18786,11 @@ MonoBehaviour:
   panelVerificationScore: {fileID: 1412107769}
   score: {fileID: 1293143825}
   dataNumber: {fileID: 982043289}
+  addressBDC: /bdc
+  bcdSFX: {fileID: 1170345801}
+  bcdTakePicture: {fileID: 8300000, guid: 8c202d765b8101d498b89caa9e22b441, type: 3}
+  bcdScanNoResult: {fileID: 8300000, guid: 0a8fffd2c70fa8945ad2165a1ea4b537, type: 3}
+  bcdScanResult: {fileID: 8300000, guid: 23933acdcbe096a4eb7db9c4808c8295, type: 3}
 --- !u!4 &1863186576
 Transform:
   m_ObjectHideFlags: 0
@@ -19782,7 +19884,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d7bec4f3a88c4af45802639060c66cf2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22a34f4ef4c69dc4e8ea8e232e8c6201, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20030,8 +20132,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 347.6001}
-  m_SizeDelta: {x: 1516.2, y: 354.1}
+  m_AnchoredPosition: {x: 0, y: 356.1}
+  m_SizeDelta: {x: 1543.54, y: 417.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2008822061
 MonoBehaviour:
@@ -20055,7 +20157,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f12355ceaa9ac1f438db2ea141d3bb2c, type: 3}
-    m_FontSize: 85
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -20066,9 +20168,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Specimen scanned.
+  m_Text: 'Scan complete.
 
-    No possible function and habitat matches found.'
+
+    Bone structure not recognized.
+
+    Requires assembled specimen.'
 --- !u!222 &2008822062
 CanvasRenderer:
   m_ObjectHideFlags: 0
